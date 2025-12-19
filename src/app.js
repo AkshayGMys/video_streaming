@@ -21,13 +21,8 @@ app.use(urlencoded({ extended : true , limit : SIZE}));
 app.use(express.static('public')); //To serve static files like images ,css ,js etc.
 app.use(cookieParser()); //To parse cookies from the request object
 
-
 //Import the routes ,make sure you import here only and not on top. that is the standard convention.
 import userRouter from './routes/user.routes.js' ;
-
 //Route declarations
 app.use("/api/v1/users", userRouter); //I am saying that all the user realted routes are in the userRouter and the base url for that is /api/v1/users
-
-
-
 export default app;
