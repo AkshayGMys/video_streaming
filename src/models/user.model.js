@@ -1,4 +1,4 @@
-import mongoose ,{Schema} from "mongoose";
+import mongoose,{Schema}  from "mongoose";
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 const userSchema = new Schema({
@@ -59,13 +59,14 @@ userSchema.methods.isPasswordCorrect = async function(password){
 
 userSchema.methods.generateAccessToken = function(){
   return jwt.sign(
-    {
+    {//This this here has reference to the user document which is trying to generate the access token and we can get the details of that user from this this keyword.If we use arrow function here then this will not have the reference to the user document and we will not be able to get the details of the user from this keyword.
+    //this basically has this._id , this .email , this.username , this.fullname etc. as we have defined in the userSchema
       _id : this._id,
       email : this.email,
       username : this.username,
       fullname : this.fullname,
     },
-    process.env.ACCESS_TOKEN_SECRET,
+    process.env.ACCESS_TOKEN_SECRET,  
     {
       expiresIn : process.env.ACCESS_TOKEN_EXPIRY,
     }

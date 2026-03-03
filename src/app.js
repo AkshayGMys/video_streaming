@@ -9,7 +9,7 @@ app.use(cors(
   {
     origin : process.env.CORS_ORIGIN,
     credentials : true 
-    // Allow credentials to b sent like cookies , auth etc.
+    // Allow credentials to be sent like cookies , auth etc.
   }
 ));
 

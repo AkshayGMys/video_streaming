@@ -5,7 +5,7 @@ import {upload} from "../middlewares/multer.midldleware.js"
 
 const router = Router();
 router.route('/register').post(
-  //This accepts two images befpre registerUser is touched basically
+  //This accepts two images before registerUser is touched basically
   upload.fields([
     {
       name : "avatar",
@@ -18,7 +18,7 @@ router.route('/register').post(
   ]),
   registerUser
 ); // If url is /api/v1/users/register , then this registerUser funciton is called.
-console.log("✅ user.routes.js loaded");
+console.log(" user.routes.js loaded");
 
 
 

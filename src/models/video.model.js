@@ -44,12 +44,4 @@ const videoSchema = new mongoose.Schema({
 
 
 videoSchema.plugin(mongooseAggregatePaginate); // Now we can write aggregate paginations
-
-
-
-
-
-
-
-
 export const Video = mongoose.model("Video", videoSchema);
